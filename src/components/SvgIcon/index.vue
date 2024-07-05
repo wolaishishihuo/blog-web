@@ -1,5 +1,5 @@
 <template>
-    <svg :style="iconStyle" aria-hidden="true">
+    <svg :style="iconStyle" aria-hidden="true" class="theme-icon">
         <use :xlink:href="symbolId" />
     </svg>
 </template>
@@ -20,3 +20,9 @@ const props = withDefaults(defineProps<SvgProps>(), {
 
 const symbolId = computed(() => `#${props.prefix}-${props.name}`);
 </script>
+
+<style lang="scss" scoped>
+.theme-icon {
+    fill: var(--el-text-color-primary);
+}
+</style>
