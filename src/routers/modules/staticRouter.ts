@@ -54,6 +54,6 @@ export const errorRouter = [
     // Resolve refresh page, route warnings
     {
         path: '/:pathMatch(.*)*',
-        component: () => import('@/components/ErrorMessage/404.vue')
+        redirect: '/404'
     }
 ];
