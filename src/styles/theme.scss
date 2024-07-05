@@ -1,0 +1,21 @@
+/* CSS 部分：关闭默认过渡效果和混合模式 */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+  mix-blend-mode: normal !important;
+}
+
+/* 进入和退出深色模式时控制伪元素的堆叠顺序 */
+.dark::view-transition-old(root) {
+  z-index: 1 !important;
+}
+.dark::view-transition-new(root) {
+  z-index: 999 !important;
+}
+
+::view-transition-old(root) {
+  z-index: 999 !important;
+}
+::view-transition-new(root) {
+  z-index: 1 !important;
+}
