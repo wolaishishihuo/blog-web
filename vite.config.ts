@@ -18,6 +18,13 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
                 '@': path.resolve(__dirname, 'src')
             }
         },
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: `@import "@/styles/var.scss";`
+                }
+            }
+        },
         esbuild: {
             pure: env.VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : []
         },
