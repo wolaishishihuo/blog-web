@@ -40,6 +40,11 @@ export const initDynamicRouter = async () => {
                 router.addRoute('layout', menu as unknown as RouteRecordRaw);
             }
         });
+        // 在动态路由之后挂载匹配 404 路由
+        router.addRoute({
+            path: '/:pathMatch(.*)*',
+            redirect: '/404'
+        });
     } catch (error) {
         // 当按钮 || 菜单请求出错时，重定向到登陆页
         userStore.setToken('');

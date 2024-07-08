@@ -50,10 +50,5 @@ export const errorRouter = [
         meta: {
             title: '500页面'
         }
-    },
-    // Resolve refresh page, route warnings
-    {
-        path: '/:pathMatch(.*)*',
-        redirect: '/404'
     }
 ];
