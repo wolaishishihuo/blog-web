@@ -18,6 +18,8 @@ export namespace User {
         secret: string;
         email: string;
         mobile: string;
+        nickname: string;
+        createAt: string;
     }
 }
 export namespace Captcha {

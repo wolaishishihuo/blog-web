@@ -33,25 +33,10 @@
     .classic-content {
         display: flex;
         height: calc(100% - 55px);
-        :deep(.el-aside) {
-            width: auto;
-            background-color: var(--el-color-primary);
-            border-right: 1px solid var(--el-border-color);
-            .aside-box {
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                transition: width 0.3s ease;
-                .el-menu {
-                    width: 100%;
-                    overflow-x: hidden;
-                    border-right: none;
-                }
-            }
-        }
-        .classic-main {
-            display: flex;
-            flex-direction: column;
+        box-sizing: border-box;
+        padding: 20px 20%;
+        > div {
+            width: 100%;
         }
     }
 }

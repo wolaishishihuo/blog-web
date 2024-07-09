@@ -4,7 +4,7 @@
             <HeaderLeft />
             <HeaderRight />
         </el-header>
-        <el-main>
+        <el-main class="classic-content">
             <router-view></router-view>
         </el-main>
     </el-container>
