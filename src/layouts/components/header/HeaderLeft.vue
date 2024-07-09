@@ -1,6 +1,6 @@
 <template>
     <div class="header-lf">
-        <SvgIcon @click="goHome" name="logo" :icon-style="{ width: '100px', height: '50px' }" />
+        <SvgIcon class="logo" @click="goHome" name="logo" :icon-style="{ width: '100px', height: '50px' }" />
     </div>
 </template>
 
