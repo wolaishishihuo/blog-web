@@ -11,8 +11,8 @@
 </template>
 
 <script setup lang="ts">
-import HeaderLeft from './components/header/HeaderLeft.vue';
-import HeaderRight from './components/header/HeaderRight.vue';
+import HeaderLeft from './components/Header/HeaderLeft.vue';
+import HeaderRight from './components/Header/HeaderRight.vue';
 import { useUserStore } from '@/stores/modules/user';
 const user = useUserStore();
 user.getUserInfo();

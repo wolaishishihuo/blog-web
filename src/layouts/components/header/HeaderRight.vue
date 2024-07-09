@@ -1,12 +1,13 @@
 <template>
     <div class="header-ri">
-        <nav />
+        <!-- <nav /> -->
         <SwitchTheme />
-        <member />
+        <Member />
     </div>
 </template>
 
 <script setup lang="ts">
 import SwitchTheme from './components/SwitchTheme.vue';
+import Member from './components/Member.vue';
 </script>
 <style scoped lang="scss"></style>
