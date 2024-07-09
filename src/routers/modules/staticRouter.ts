@@ -1,14 +1,11 @@
-import { HOME_URL, LOGIN_URL } from '@/config';
+import { LOGIN_URL } from '@/config';
 import { RouteRecordRaw } from 'vue-router';
 
 export const staticRouter: RouteRecordRaw[] = [
     {
         path: '/',
         name: 'home',
-        component: () => import('@/views/home/index.vue'),
-        meta: {
-            title: 'jnames'
-        }
+        component: () => import('@/views/home/index.vue')
     },
     {
         path: LOGIN_URL,
