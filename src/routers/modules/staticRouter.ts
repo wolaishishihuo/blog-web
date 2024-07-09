@@ -4,7 +4,11 @@ import { RouteRecordRaw } from 'vue-router';
 export const staticRouter: RouteRecordRaw[] = [
     {
         path: '/',
-        redirect: HOME_URL
+        name: 'home',
+        component: () => import('@/views/home/index.vue'),
+        meta: {
+            title: 'jnames'
+        }
     },
     {
         path: LOGIN_URL,
@@ -13,13 +17,6 @@ export const staticRouter: RouteRecordRaw[] = [
         meta: {
             title: '登录'
         }
-    },
-    {
-        path: '/layout',
-        name: 'layout',
-        redirect: HOME_URL,
-        children: [],
-        component: () => import('@/layouts/index.vue')
     }
 ];
 
