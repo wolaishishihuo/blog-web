@@ -37,6 +37,13 @@ declare interface ViteEnv {
     VITE_PROXY: [string, string][];
 }
 
+/* FileType */
+declare namespace File {
+    type ImageMimeType = 'image/apng' | 'image/bmp' | 'image/gif' | 'image/jpeg' | 'image/pjpeg' | 'image/png' | 'image/svg+xml' | 'image/tiff' | 'image/webp' | 'image/x-icon';
+
+    type ExcelMimeType = 'application/vnd.ms-excel' | 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+}
+
 /* __APP_INFO__ */
 declare const __APP_INFO__: {
     pkg: {
