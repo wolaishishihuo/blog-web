@@ -3,7 +3,7 @@ import { loginApi, registerApi } from '@/api/login';
 import { HOME_URL } from '@/config';
 // import { initDynamicRouter } from '@/routers/modules/dynamicRouter';
 import { useUserStore } from '@/stores/modules/user';
-import { FormInstance } from 'element-plus';
+import { ElMessage, FormInstance } from 'element-plus';
 import { reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -36,8 +36,12 @@ export default () => {
             if (!valid) return;
             loading.value = true;
             try {
-                const { data } = await api({ ...form, captcha: { key: form.captchaKey, value: form.captchaValue } });
-                successCallback(data);
+                const { data, message, success } = await api({ ...form, captcha: { key: form.captchaKey, value: form.captchaValue } });
+                if (success) {
+                    successCallback(data);
+                } else {
+                    ElMessage.error(message);
+                }
             } finally {
                 loading.value = false;
             }

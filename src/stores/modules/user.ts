@@ -3,6 +3,7 @@ import { UserState } from '../interface';
 import piniaPersistConfig from '../helper';
 import { getUserInfo } from '@/api/user';
 import useEnv from '@/hooks/useEnv';
+import { ElMessage } from 'element-plus';
 const { VITE_BASE_URL } = useEnv();
 
 export const useUserStore = defineStore('user', {
@@ -31,8 +32,12 @@ export const useUserStore = defineStore('user', {
         },
 
         async getUserInfo() {
-            const { data } = await getUserInfo();
-            Object.assign(this.userInfo, data);
+            const { data, success, message } = await getUserInfo();
+            if (success) {
+                Object.assign(this.userInfo, data);
+            } else {
+                ElMessage.error(message);
+            }
         }
     },
     persist: piniaPersistConfig('user')
