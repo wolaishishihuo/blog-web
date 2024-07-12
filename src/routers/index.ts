@@ -5,7 +5,7 @@ import NProgress from '@/config/nprogress';
 
 // 路由实例
 const router: Router = createRouter({
-    history: createWebHistory('/v3/web/'),
+    history: createWebHistory(),
     routes: [...staticRouter, ...errorRouter],
     strict: false,
     scrollBehavior: () => ({ left: 0, top: 0 })
