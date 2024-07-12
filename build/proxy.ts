@@ -19,5 +19,7 @@ export const creatProxy = (list: ProxyList): ProxyTargetList => {
             ...(isHttps ? { secure: false } : {})
         };
     }
+    console.log(ret);
+
     return ret;
 };

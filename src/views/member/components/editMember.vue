@@ -5,7 +5,7 @@
                 <editUserInfoForm />
             </el-tab-pane>
             <el-tab-pane label="上传照片" name="second">
-                <UploadImg />
+                <UploadImg :image-url="avatar" />
             </el-tab-pane>
         </el-tabs>
         <div class="footer-btn" v-if="activeName === 'first'">
@@ -16,13 +16,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import editUserInfoForm from './editUserInfoForm.vue';
 import UploadImg from '@/components/Uploads/UploadImg.vue';
 import type { TabsPaneContext } from 'element-plus';
+import { useUserStore } from '@/stores/modules/user';
+import useEnv from '@/hooks/useEnv';
+
+const { userInfo } = useUserStore();
+const { VITE_BASE_URL } = useEnv();
+const avatar = computed(() => `${VITE_BASE_URL}` + userInfo.avatar);
 
 const activeName = ref('first');
-
 const handleClick = (tab: TabsPaneContext, event: Event) => {
     console.log(tab, event);
 };

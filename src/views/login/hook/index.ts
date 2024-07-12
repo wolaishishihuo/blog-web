@@ -1,7 +1,7 @@
 import { Login } from '@/api/interface';
 import { loginApi, registerApi } from '@/api/login';
 import { HOME_URL } from '@/config';
-import { initDynamicRouter } from '@/routers/modules/dynamicRouter';
+// import { initDynamicRouter } from '@/routers/modules/dynamicRouter';
 import { useUserStore } from '@/stores/modules/user';
 import { FormInstance } from 'element-plus';
 import { reactive, ref } from 'vue';
@@ -48,7 +48,7 @@ export default () => {
         userStore.setToken(data.token);
         userStore.setUserId(data.userId);
         // 添加动态路由
-        await initDynamicRouter();
+        // await initDynamicRouter();
         // // 清空 tabs、keepAlive 数据
         // // tabsStore.setTabs([]);
         // // keepAliveStore.setKeepAliveName([]);
